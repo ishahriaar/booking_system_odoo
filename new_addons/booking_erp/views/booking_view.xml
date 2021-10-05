@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+
+        <record id='booking_view_customer' model='ir.ui.view'>
+            <field name='model'>book.hotel</field>
+            <field name='arch' type='xml'>
+                <tree string="Bookings">
+
+                    <field name="customer_name"/>
+                    <field name="customer_address"/>
+
+                    <field name="customer_number"/>
+                    <field name="expected_room"/>
+                    <field name="room_user"/>
+
+                    <field name="statusID"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id='booking_view_form' model='ir.ui.view'>
+            <field name='model'>book.hotel</field>
+            <field name='arch' type='xml'>
+                <form string="Bookings">
+                    <header groups="booking_erp.group_hotel_manager">
+                        <button name="update_new" string="Approve" class="btn-success"
+
+                        type="object"/>
+
+                        <button name="update_old" string="Reject" class="btn-danger"
+
+                        type="object"/>
+
+                    </header>
+                    <sheet>
+                    <group>
+                    <field name="customer_name"/>
+                    <field name="customer_address"/>
+
+                    <field name="customer_number"/>
+                    <field name="expected_room"/>
+                    <field name="room_user"/>
+
+                    <field name="statusID"/>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+<!-- for hotels list view-->
+        <record id='booking_erp_list' model='ir.ui.view' >
+            <field name='name'>hotels.list.view</field>
+            <field name='model'>hotels.list</field>
+            <field name='arch' type='xml'>
+                <tree string="Hotels List"
+                decoration-danger="status == 'unavailable'" decoration-success="status == 'available'">
+
+                    <field name='name'/>
+                    <field name="location"/>
+
+                    <field name='status'/>
+                </tree>
+            </field>
+        </record>
+
+<!-- for product form view -->
+        <record id='hotel_view_form' model='ir.ui.view' >
+            <field name='name'>product.entry.form</field>
+            <field name='model'>hotels.list</field>
+            <field name='arch' type='xml'>
+                <form>
+                    <header>
+                        <button name="action_url" string="Book Hotel" class="btn-primary"
+
+                        type="object"/>
+
+                    </header>
+                    <sheet>
+                    <group>
+                        <field name='name'/>
+                        <field name='location'/>
+                        <field name='status'/>
+                        <field name='total_room'/>
+                    </group>
+
+                    <notebook>
+                            <page string="Booking Information">
+                                <group>
+                                    <field name="bookingID"/>
+
+                                </group>
+                            </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+<!-- kanban view for products -->
+
+   <!-- calendar view for products -->
+
+   <!-- < Calendar >  -->
+
+<!--    <record id="product_view_calendar" model="ir.ui.view">   -->
+<!--        <field name="name">inventory.product.calendar</field>   -->
+<!--        <field name="model">product.list</field>   -->
+<!--        <field name="arch" type="xml">       -->
+<!--            <calendar string="Product Availablity TimeSheet" date_start="avaiable_from"                 -->
+<!--                date_stop="available_till">               -->
+<!--                        -->
+<!--                -->
+<!--                <field name="pname"/>           -->
+<!--            -->
+<!--            </calendar>   -->
+<!--        </field>-->
+<!--    </record>-->
+
+
+<!-- Kanban advanced view -->
+
+<!--    <record id="view_product_kanban" model="ir.ui.view">-->
+<!--        <field name="name">product.list.kanban</field>-->
+<!--        <field name="model">product.list</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban default_group_by="status" colors="blue: status=='new'">-->
+<!--                <field name="pname"/>-->
+<!--                <field name="description"/>-->
+<!--                <field name="product_image"/>-->
+<!--                -->
+<!--                <field name="cost"/>-->
+<!--                <field name="status"/>-->
+<!--                <progressbar field="status" colors='{"available": "success", "unavailable": "danger"}'/>-->
+<!--                -->
+<!--                <templates>-->
+<!--                    <t t-name="kanban-box">-->
+<!--                        <div class="oe_kanban_global_click oe_kanban_card o_real_estate_kanban" style="background-color: #f3e5f5; margin-top: 10px;">-->
+
+<!--                            <div class="o_kanban_image">-->
+<!--                                <field name="product_image" widget="image" class="oe_avtar"/>-->
+<!--                            </div>-->
+<!--                            <div class="oe_kanban_details">-->
+<!--                                <h2 class="o_kanban_record_title"><field name="pname"/></h2>-->
+<!--                                <ul>-->
+<!--                                    -->
+<!--                                    -->
+<!--                                    <li>Description : <field name="description"/></li>-->
+<!--                                    &lt;!&ndash; <li>Price : <field name="sale_price"/></li>-->
+<!--                                    <li>Country : <field name="country"/></li> &ndash;&gt;-->
+<!--                                    <li>Status : <field name="status"/></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+
+
+
+
+
+<!--    <record id="change_status" model="ir.actions.server">   -->
+<!--            -->
+<!--            <field name="name">Toggle Status</field>   -->
+<!--            <field name="model_id" ref="model_product_list"/>  -->
+<!--            <field name="binding_model_id" ref="model_product_list"/>-->
+<!--            <field name="binding_view_types">list,form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">action = record.update_status()</field>-->
+<!--            -->
+<!--    </record>-->
+
+
+    </data>
+</odoo>
+
+

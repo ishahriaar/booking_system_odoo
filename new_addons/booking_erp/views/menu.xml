@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="nearby_action_window">
+      <field name="name">Nearby Hotels and Cafes</field>
+      <field name="res_model">hotels.list</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="booking_action_window">
+      <field name="name">Booking Window</field>
+      <field name="res_model">book.hotel</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="iBooking"
+              id="booking_erp_root"
+              web_icon="booking_erp,static/description/icon.png"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Nearby Hotels" id="booking_erp.menu_1" action="nearby_action_window" parent="booking_erp_root"/>
+    <menuitem name="Booking" id="booking_erp.menu_2" action="booking_action_window" parent="booking_erp_root"/>
+
+
+    <!-- actions -->
+
+<!--    <menuitem name="List" id="booking_erp.menu_1_list" parent="booking_erp.menu_1"-->
+<!--              action="booking_erp.action_window"/>-->
+
+
+  </data>
+</odoo>
