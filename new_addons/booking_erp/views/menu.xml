@@ -7,13 +7,20 @@
     <record model="ir.actions.act_window" id="nearby_action_window">
       <field name="name">Nearby Hotels and Cafes</field>
       <field name="res_model">hotels.list</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="booking_action_window">
       <field name="name">Booking Window</field>
       <field name="res_model">book.hotel</field>
       <field name="view_mode">tree,form</field>
+    </record>
+<!--    API Calling-->
+
+    <record id='action_hotel_my_api' model='ir.actions.act_window'>
+            <field name='name'>Hotel api</field>
+            <field name='res_model'>hotels.api</field>
+            <field name='view_mode'>tree,form</field>
     </record>
 
 
@@ -29,8 +36,12 @@
 
     <menuitem name="Nearby Hotels" id="booking_erp.menu_1" action="nearby_action_window" parent="booking_erp_root"/>
     <menuitem name="Booking" id="booking_erp.menu_2" action="booking_action_window" parent="booking_erp_root"/>
-
-
+    <menuitem
+                id='menu_hotel_api'
+                action='action_hotel_my_api'
+                name='Api Hotel'
+                parent='booking_erp_root'
+                sequence='3'/>
     <!-- actions -->
 
 <!--    <menuitem name="List" id="booking_erp.menu_1_list" parent="booking_erp.menu_1"-->

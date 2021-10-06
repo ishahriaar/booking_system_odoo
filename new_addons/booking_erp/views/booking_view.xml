@@ -6,13 +6,14 @@
         <record id='booking_view_customer' model='ir.ui.view'>
             <field name='model'>book.hotel</field>
             <field name='arch' type='xml'>
-                <tree string="Bookings">
+                <tree string="Bookings"
+                decoration-danger="statusID == 'reject'" decoration-success="statusID == 'approve'" >
 
                     <field name="customer_name"/>
                     <field name="customer_address"/>
 
                     <field name="customer_number"/>
-                    <field name="expected_room"/>
+                    <field name="expected_room" />
                     <field name="room_user"/>
 
                     <field name="statusID"/>
@@ -24,7 +25,7 @@
             <field name='model'>book.hotel</field>
             <field name='arch' type='xml'>
                 <form string="Bookings">
-                    <header groups="booking_erp.group_hotel_manager">
+                    <header groups="booking_erp.group_hotel_manager" style="padding:10px;">
                         <button name="update_new" string="Approve" class="btn-success"
 
                         type="object"/>

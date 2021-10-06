@@ -29,6 +29,7 @@
         'views/menu.xml',
         'views/hotels_view.xml',
         'views/booking_view.xml',
+        'views/hotel_api_views.xml'
 
     ],
     'installable': True,

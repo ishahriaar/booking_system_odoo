@@ -25,17 +25,22 @@
             <field name='arch' type='xml'>
                 <form>
                     <header>
-                        <button name="action_url" string="Book Hotel" class="btn-primary"
+                        <button name="action_url" string="Click Here For Booking" class="btn-outline-success" style="margin-left:40px;padding:15px"
 
                         type="object"/>
 
                     </header>
                     <sheet>
+
                     <group>
+                        <field name="hotel_image" widget="image" class="oe_avatar oe_left"/>
+
+
                         <field name='name'/>
                         <field name='location'/>
                         <field name='status'/>
                         <field name='total_room'/>
+
                     </group>
 
                     <notebook>
@@ -75,43 +80,43 @@
 
 <!-- Kanban advanced view -->
 
-<!--    <record id="view_product_kanban" model="ir.ui.view">-->
-<!--        <field name="name">product.list.kanban</field>-->
-<!--        <field name="model">product.list</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <kanban default_group_by="status" colors="blue: status=='new'">-->
-<!--                <field name="pname"/>-->
-<!--                <field name="description"/>-->
-<!--                <field name="product_image"/>-->
-<!--                -->
-<!--                <field name="cost"/>-->
-<!--                <field name="status"/>-->
-<!--                <progressbar field="status" colors='{"available": "success", "unavailable": "danger"}'/>-->
-<!--                -->
-<!--                <templates>-->
-<!--                    <t t-name="kanban-box">-->
-<!--                        <div class="oe_kanban_global_click oe_kanban_card o_real_estate_kanban" style="background-color: #f3e5f5; margin-top: 10px;">-->
+    <record id="view_product_kanban" model="ir.ui.view">
+        <field name="name">Nearby Hotels</field>
+        <field name="model">hotels.list</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status" colors="blue: status=='new'">
+                <field name="name"/>
+                <field name="location"/>
+                <field name="hotel_image"/>
 
-<!--                            <div class="o_kanban_image">-->
-<!--                                <field name="product_image" widget="image" class="oe_avtar"/>-->
-<!--                            </div>-->
-<!--                            <div class="oe_kanban_details">-->
-<!--                                <h2 class="o_kanban_record_title"><field name="pname"/></h2>-->
-<!--                                <ul>-->
-<!--                                    -->
-<!--                                    -->
-<!--                                    <li>Description : <field name="description"/></li>-->
-<!--                                    &lt;!&ndash; <li>Price : <field name="sale_price"/></li>-->
-<!--                                    <li>Country : <field name="country"/></li> &ndash;&gt;-->
-<!--                                    <li>Status : <field name="status"/></li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </t>-->
-<!--                </templates>-->
-<!--            </kanban>-->
-<!--        </field>-->
-<!--    </record>-->
+
+                <field name="status"/>
+                <progressbar field="status" colors='{"available": "success", "unavailable": "danger"}'/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click oe_kanban_card o_real_estate_kanban" style="background-color: #f3e5f5; margin-top: 10px;">
+
+                            <div class="o_kanban_image">
+                                <field name="hotel_image" widget="image" class="oe_avatar"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h2 class="o_kanban_record_title"><field name="name"/></h2>
+                                <ul>
+
+
+                                    <li>Location : <field name="location"/></li>
+                                    <li>Available Room : <field name="total_room"/></li>
+
+                                    <li>Status : <field name="status"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
 
 

@@ -4,6 +4,8 @@ from odoo import models, fields, api
 class HotelBook(models.Model):
     _name = 'book.hotel'
     _description = 'Book a Hotel'
+    _rec_name = 'customer_name'
+    # _inherit = 'hotels.list'
 
     def _default_user(self):
         return self.env.user.id
@@ -36,6 +38,15 @@ class HotelBook(models.Model):
                 record.statusID = 'reject'
             elif record.statusID == 'approve':
                 record.statusID = 'reject'
+
+    # @api.depends('expected_room', 'total_room')
+    # def compute_total(self):
+    #     for rec in self:
+    #         rec.total_room = rec.total_room-rec.expected_room
+
+
+
+
 
 
 

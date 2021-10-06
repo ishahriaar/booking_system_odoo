@@ -19,7 +19,11 @@ class HotelList(models.Model):
     ], string='Status')
 
     total_room = fields.Integer(string='Available Room')
+
+
     bookingID = fields.One2many('book.hotel', 'room_user', string='Booking Info')
+
+    hotel_image = fields.Binary(string="Hotel Details")
 
     def action_url(self):
         return {
@@ -28,7 +32,8 @@ class HotelList(models.Model):
             'view_mode': 'form',
             'view_type': 'form',
             'view_id': self.env.ref('booking_erp.booking_view_form').id,
-            'target': 'new'
+            'target': 'new',
+            'context': {'default_room_user': self.id}
         }
 
 
